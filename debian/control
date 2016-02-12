@@ -1,0 +1,33 @@
+Source: libcgi-pm-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: AGOSTINI Yves <agostini@univ-metz.fr>,
+           Damyan Ivanov <dmn@debian.org>,
+           Ansgar Burchardt <ansgar@debian.org>,
+           gregor herrmann <gregoa@debian.org>,
+           Jonathan Yu <jawnsy@cpan.org>
+Section: perl
+Priority: optional
+Build-Depends: debhelper (>= 9)
+Build-Depends-Indep: libhtml-parser-perl,
+                     libtest-deep-perl,
+                     libtest-nowarnings-perl,
+                     libtest-warn-perl,
+                     perl,
+                     perl (>= 5.13.11) | libtest-simple-perl (>= 0.98)
+Standards-Version: 3.9.7
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libcgi-pm-perl.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-perl/packages/libcgi-pm-perl.git
+Homepage: https://metacpan.org/release/CGI
+Testsuite: autopkgtest-pkg-perl
+
+Package: libcgi-pm-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libhtml-parser-perl
+Recommends: libcgi-fast-perl (>= 1:2.01)
+Breaks: libcgi-fast-perl (<< 1:2), git (<< 1:2.1.3)
+Description: module for Common Gateway Interface applications
+ CGI.pm is a Perl module that provides classes useful for creating Web forms
+ and for parsing their contents. It defines CGI objects, entities that contain
+ the values of the current query string and other state variables.
